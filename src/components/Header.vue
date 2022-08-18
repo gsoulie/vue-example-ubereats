@@ -33,15 +33,13 @@
         props: {
             searchResults: Array
         },
-        emits: ["response"],
-        setup(props: any, {
-            emit
-        }) {
+        setup(props: any, /*{ emit }*/ ctx) {
             let searchField = ref('');
             let wrapperIsOpen = ref(false); // ouvrir/fermer la liste des résultats de la recherche
 
             watch(searchField, (newValue, oldValue) => {
-                emit("response", newValue);
+                //emit("response", newValue);
+                ctx.emit("response", newValue);
                 wrapperIsOpen.value = newValue !== '' ? true : false;
             });
 

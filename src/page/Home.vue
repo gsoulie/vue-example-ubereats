@@ -35,10 +35,10 @@ export default {
             data.value = DataService.filteringRestaurantByName(e);
         }
         
-        // Dernière étape du Setup()
+        // Dernière étape du Setup() - return permet d'exposer les variables à la vue
         return {
             searchRestaurant,
-            data,   // indiquer qu'on souhaite exposer data aux autres composants
+            data,
         }
     }
 }

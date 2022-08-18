@@ -6,7 +6,7 @@
 
         <!-- <div :style="changeBackground" class="restaurant-img"></div> -->
         <div class="image-wrapper">
-            <img :src="restaurant.image" :alt="restaurant.name">
+            <img :src="restaurant.image" :alt="restaurant.name" />
         </div>
 
         <div class="restaurant-info">
@@ -16,11 +16,11 @@
                     <span>{{ restaurant.note }}</span>
                 </p>
             </div>
-            <p class="bottom">
+            <div class="bottom">
                 <span class="symbol"></span>
                 <div class="dot"></div>
                 <span class="time">{{ restaurant.driveTime }}</span>
-            </p>
+            </div>
         </div>
     </router-link>
 </template>
@@ -42,6 +42,8 @@
                     backgroundImage: `url(${props.restaurant?.image})`.toString()
                 }
             })
+
+            // Dernière étape du Setup() - return permet d'exposer les variables à la vue
             return {
                 changeBackground
             }

@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="header">
-        <img :src="restaurant.image">
+        <img :src="restaurant.image" />
     </div>
     <div class="infos">
         <h1>{{ restaurant.name }}</h1>
@@ -37,6 +37,7 @@ export default {
             
         })
 
+        // Dernière étape du Setup() - return permet d'exposer les variables à la vue
         return {
             restaurant
         }
